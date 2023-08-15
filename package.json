@@ -1,0 +1,33 @@
+{
+  "name": "easy-validation-js",
+  "version": "1.0.0",
+  "description": "learn npm publish with typescript",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "prepare": "npm run build",
+    "start": "nodemon lib/index.js"
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DeveloperRejaul/easy-validation-js.git"
+  },
+  "author": "Rejaul Karim",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DeveloperRejaul/easy-validation-js/issues"
+  },
+  "homepage": "https://github.com/DeveloperRejaul/easy-validation-js#readme",
+  "files": [
+    "lib/**/*"
+  ],
+  "devDependencies": {
+    "nodemon": "^3.0.1",
+    "typescript": "^5.1.6"
+  }
+}

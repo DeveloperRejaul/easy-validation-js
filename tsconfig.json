@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "target": "ES5", // kon version e convert hube
+    "module": "CommonJS", // compiler syntax type
+    "declaration": true, // auto compilation, kon kon method bailable ey sob kisor suggestion  asbe
+    "outDir": "./lib", // compile kura code jekane run hube tar dir
+    "strict": true // code golo javascript mode run hube
+  },
+
+  "include": ["src"], // je file ke compile kurbe tar dir
+  "exclude": ["node_modules", "**/__test__/**"] // je code golo compile kurbe na
+}
