@@ -16,5 +16,5 @@ const easy = () => {
 
   };
 };
-const Easy = easy();
-export { Easy };
+export const Easy = easy();
+
