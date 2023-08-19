@@ -1,0 +1,7 @@
+# Ignore artifacts:
+lib
+node_modules
+
+
+# Ignore files:
+**/*.gitignore

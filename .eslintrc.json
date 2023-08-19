@@ -1,0 +1,15 @@
+{
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint"],
+  "extends": ["airbnb-typescript/base"],
+  "rules": {
+    "import/no-extraneous-dependencies": "off",
+    "import/extensions": "off",
+    "@typescript-eslint/no-unused-vars": "warn",
+    "max-lines": ["warn", 100]
+  },
+  "parserOptions": {
+    "project": "./tsconfig.eslint.json"
+  }
+}
