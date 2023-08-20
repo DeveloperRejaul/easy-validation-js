@@ -441,6 +441,12 @@ doctrine@^3.0.0:
   dependencies:
     esutils "^2.0.2"
 
+"easy-validation-js@file:":
+  version "1.2.0"
+  resolved "file:"
+  dependencies:
+    easy-validation-js "file:"
+
 es-abstract@^1.19.0, es-abstract@^1.20.4, es-abstract@^1.21.2:
   version "1.22.1"
   resolved "https://registry.npmjs.org/es-abstract/-/es-abstract-1.22.1.tgz"

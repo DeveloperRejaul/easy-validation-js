@@ -21,17 +21,34 @@ Install easy-validation-js with npm
 ## Features
 
 - Validate string
+- Validate number
+- Validate boolean
+- Validate array
+- Validate object
 
 ## Usage/Examples
 
 ```javascript
-import {Easy} from 'easy-validation-js';
-<!-- For String -->
+import { Easy } from 'easy-validation-js';
+// for string data
 const str1 = 'hello world';
 const str2 = 20;
-const myStr = Easy.isString(str2, { isRequire:true, message:'string required' });
+const myStr = Easy.isString(str2, {
+  isRequire: true,
+  message: 'string required',
+  error: true, // when you enable the error you crashed server;
+});
 console.log(myStr); // return string required
 
+// for number data
+const num1 = 10;
+const num2 = 'hello world';
+
+const myNum = Easy.isNumber(num2, {
+  isRequire: true,
+  message: 'number value required',
+});
+console.log(myNumber);
 ```
 
 ## License
