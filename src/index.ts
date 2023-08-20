@@ -12,6 +12,7 @@ const easy = () => {
         if (option.error) throw new Error(errorMessage);
         if (option.isRequire) return option.message ? option.message : 'string required';
       }
+      return true;
     },
     isNumber:(number:number, option:Option) => {
       if (typeof number !== 'number') {
@@ -20,6 +21,7 @@ const easy = () => {
         if (option?.isRequire) return option.message ? option.message : 'number required';
         return errorMessage;
       }
+      return true;
     },
     isBool:(bool:boolean, option:Option)=>{
       if (typeof bool !== 'boolean') {
@@ -28,6 +30,7 @@ const easy = () => {
         if (option?.isRequire) return option.message ? option.message : 'boolean value required';
         return errorMessage;
       }
+      return true;
     },
     isArray:(arr:[], option:Option)=>{
       if (!Array.isArray(arr)) {
@@ -36,6 +39,7 @@ const easy = () => {
         if (option?.isRequire) return option.message ? option.message : 'Array data required';
         return errorMessage;
       }
+      return true;
     },
     isObj:(obj:object, option:Option)=>{
       if (typeof obj  !== 'object' || Array.isArray(obj)) {
@@ -44,6 +48,7 @@ const easy = () => {
         if (option?.isRequire) return option.message ? option.message : 'object data required';
         return errorMessage;
       }
+      return true;
     },
   };
 };
