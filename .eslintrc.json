@@ -7,7 +7,7 @@
     "import/no-extraneous-dependencies": "off",
     "import/extensions": "off",
     "@typescript-eslint/no-unused-vars": "warn",
-    "max-lines": ["warn", 100]
+    "max-lines": ["warn", 500]
   },
   "parserOptions": {
     "project": "./tsconfig.eslint.json"

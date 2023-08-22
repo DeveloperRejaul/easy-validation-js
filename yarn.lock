@@ -442,7 +442,7 @@ doctrine@^3.0.0:
     esutils "^2.0.2"
 
 "easy-validation-js@file:":
-  version "1.2.0"
+  version "1.2.2"
   resolved "file:"
   dependencies:
     easy-validation-js "file:"
