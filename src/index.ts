@@ -19,8 +19,8 @@ const main = (data:Object) => {
       const isOk:boolean = Object.keys(data).length === num;
       if (!isOk) {
         const errorMessage = option?.message ? option.message : 'length same required';
-        if (option.error) throw new Error(errorMessage);
-        if (option.isRequire) return option?.message ? option.message : 'length same required';
+        if (option?.error) throw new Error(errorMessage);
+        if (option?.isRequire) return option?.message ? option.message : 'length same required';
         return errorMessage;
       }
       return this;
