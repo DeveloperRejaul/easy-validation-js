@@ -19,11 +19,11 @@ const main = (data:Object) => {
       const isOk:boolean = Object.keys(data).length === num;
       if (!isOk) {
         const errorMessage = option?.message ? option.message : 'length same required';
-        if (option?.error) throw new Error(errorMessage);
-        if (option?.isRequire) return option?.message ? option.message : 'length same required';
+        if (option.error) throw new Error(errorMessage);
+        if (option.isRequire) return option?.message ? option.message : 'length same required';
+        return errorMessage;
       }
       return this;
-
     },
     val: function (objValue:string,  option:Option) {
       const array1:string[] = getObjectValues(data);
@@ -33,6 +33,7 @@ const main = (data:Object) => {
         const errorMessage = option?.message ? option.message : 'value same required';
         if (option?.error) throw new Error(errorMessage);
         if (option?.isRequire) return option?.message ? option.message : 'value same required';
+        return errorMessage;
       }
       return this;
     },
@@ -44,6 +45,7 @@ const main = (data:Object) => {
         const errorMessage = option?.message ? option.message : 'key same required';
         if (option?.error) throw new Error(errorMessage);
         if (option?.isRequire) return option?.message ? option.message : 'key same required';
+        return errorMessage;
       }
       return this;
     },
@@ -59,6 +61,7 @@ const easy = () => {
         const errorMessage = option?.message ? option.message : 'string required';
         if (option?.error) throw new Error(errorMessage);
         if (option?.isRequire) return option?.message ? option.message : 'string required';
+        return errorMessage;
       }
       return true;
     },
