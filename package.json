@@ -1,14 +1,14 @@
 {
   "name": "easy-validation-js",
-  "version": "1.2.5",
+  "version": "1.2.8",
   "description": "javascript validation library",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
-  "type": "module",
   "scripts": {
-    "build": "tsc",
-    "prepare": "npm run build",
-    "start": "nodemon lib/index.js"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:dev": "npx nodemon",
+    "build": "rimraf ./lib && tsc",
+    "start": "npm run build && node lib/index.js"
   },
   "directories": {
     "lib": "lib"
@@ -41,6 +41,9 @@
     "eslint": "^8.47.0",
     "eslint-config-airbnb-typescript": "^17.1.0",
     "nodemon": "^3.0.1",
-    "typescript": "^5.1.6"
+    "typescript": "^5.1.6",
+    "@types/node": "^20.5.4",
+    "rimraf": "^5.0.1",
+    "ts-node": "^10.9.1"
   }
 }

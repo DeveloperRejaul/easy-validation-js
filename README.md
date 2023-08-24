@@ -14,8 +14,6 @@ Add badges from somewhere like: [shields.io](https://shields.io/)
 
 Install easy-validation-js with npm <br>
 
-#### You need to use es6
-
 ```bash
   npm install easy-validation-js
 ```
@@ -33,7 +31,7 @@ Install easy-validation-js with npm <br>
 #### String and number
 
 ```javascript
-import { Easy } from 'easy-validation-js';
+const { Easy } = require('easy-validation-js');
 // for string data
 const str1 = 'hello world';
 const str2 = 20;
@@ -58,7 +56,7 @@ console.log(myNumber);
 ### Object use cases
 
 ```javascript
-import { Easy } from 'easy-validation-js';
+const { Easy } = require('easy-validation-js');
 
 const myObj = { data: 'hello world', status: '200' };
 // check is object
