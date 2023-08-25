@@ -67,6 +67,36 @@ isObj.key('data status');
 
 // check object length
 isObj.len(2);
+
+// check this key must exist in object
+const result = Easy.obj(myObj).keySome('status');
+console.log(result); // return true
+
+const result2 = Easy.obj(myObj).keySome('name');
+console.log(result2); //return key same required
+
+const result3 = Easy.obj(myObj).keySome('name', {
+  message: 'need same key',
+  isRequire: true,
+  error: false,
+});
+console.log(result3); //return need same key
+
+// check value type when all of value same type
+const myObj = { data: 'hello world', status: 200 };
+const result = Easy.obj(myObj).valType('string'); // you can also pass option
+console.log(result); // return string type required
+
+// check object with defining schema like this
+const myObj = { data: 'hello world', status: 200, isOk: true };
+const sch = { data: 'string', status: 'number' };
+const result = Easy.obj(myObj).schema(sch); // return true
+
+const sch2 = { data: 'string', status: 'string' };
+const result2 = Easy.obj(myObj).schema(sch2); // return type required
+
+// note: schema method don't check additional key type . if you need strictly check you can use schemaStrict method.
+const result3 = Easy.obj(myObj).schemaStrict(sch2); //return type required
 ```
 
 ## License

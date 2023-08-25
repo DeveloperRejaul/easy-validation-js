@@ -550,11 +550,10 @@ eastasianwidth@^0.2.0:
   resolved "https://registry.npmjs.org/eastasianwidth/-/eastasianwidth-0.2.0.tgz"
   integrity sha512-I88TYZWc9XiYHRQ4/3c5rjjfgkjhLyW2luGIheGERbNQ6OY7yTybanSpDXZa8y7VUP9YmDcYa+eyq4ca7iLqWA==
 
-"easy-validation-js@file:":
-  version "1.2.7"
-  resolved "file:"
-  dependencies:
-    easy-validation-js "file:"
+easy-validation-js@^1.2.8:
+  version "1.2.8"
+  resolved "https://registry.npmjs.org/easy-validation-js/-/easy-validation-js-1.2.8.tgz"
+  integrity sha512-4cc/6joc95dHhEzZx5UrKM+Xbic55rLBPy617+G2qTl2RFyR74J/yIPmAXtlOY7I5alMD5YncBhdOjpQJHKpZA==
 
 emoji-regex@^8.0.0:
   version "8.0.0"

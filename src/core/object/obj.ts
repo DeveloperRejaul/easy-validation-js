@@ -1,12 +1,8 @@
-type Option =  {
-  isRequire:boolean,
-  error:boolean,
-  message:string,
-};
-  
-export const main = (data:Object) => {
+import { Option } from './../../utils/types';
+
+export const main = (data:object) => {
   return {
-    len:function (num:number,  option:Option)  {
+    len: (num: number, option?: Option)=> {
       const isOk:boolean = Object.keys(data).length === num;
       if (!isOk) {
         const errorMessage = option?.message ? option.message : 'length same required';
@@ -14,9 +10,10 @@ export const main = (data:Object) => {
         if (option?.isRequire) return option?.message ? option.message : 'length same required';
         return errorMessage;
       }
-      return this;
+      return true;
+      
     },
-    val: function (objValue:string,  option:Option) {
+    val: (objValue:string,  option?:Option) =>{
       const array1:string[] = Object.values(data);
       const array2:string[] = objValue.split(' ');
       const isOk:boolean = array1.every(d=>array2.includes(d));
@@ -26,9 +23,9 @@ export const main = (data:Object) => {
         if (option?.isRequire) return option?.message ? option.message : 'value same required';
         return errorMessage;
       }
-      return this;
+      return true;
     },
-    key:function (keys:string, option:Option) {
+    key: (keys:string, option?:Option)=> {
       const array1:string[] = Object.keys(data);
       const array2:string[] = keys.split(' ');
       const isOk:boolean = array1.every(d=>array2.includes(d));
@@ -38,9 +35,9 @@ export const main = (data:Object) => {
         if (option?.isRequire) return option?.message ? option.message : 'key same required';
         return errorMessage;
       }
-      return this;
+      return true;
     },
-    keySome:function (keys:string, option:Option) {
+    keySome: (keys:string, option?:Option) =>{
       const array1:string[] = Object.keys(data);
       const array2:string[] = keys.split(' ');
       const isOk = array2.every(d=>array1.includes(d));
@@ -50,9 +47,9 @@ export const main = (data:Object) => {
         if (option?.isRequire) return option?.message ? option.message : 'key same required';
         return errorMessage;
       }
-      return this;
+      return true;
     },
-    valType:function (type:string, option:Option) {
+    valType: (type:string, option?:Option) =>{
       const isOk =  Object.values(data).every(d=> typeof d === type );
       if (!isOk) {
         const errorMessage = option?.message ? option.message : `${type} type required`;
@@ -60,8 +57,46 @@ export const main = (data:Object) => {
         if (option?.isRequire) return option?.message ? option.message : `${type} type required`;
         return errorMessage;
       }
-      return this;
+      return true;
     },
-    schema:function () {},
+    schema:(schema:Record<string, string >, option?:Option)=>{
+      for (const key in schema) {
+        const expectedType = schema[key];
+        const actualValue = data[key as keyof object];
+        if (typeof actualValue !== expectedType || !(key in data)) {
+          const errorMessage = option?.message ? option.message : 'type required';
+          if (option?.error) throw new Error(errorMessage);
+          if (option?.isRequire) return option?.message ? option.message : 'type required';
+          return errorMessage;
+        }
+      }
+      return true;
+    },
+    schemaStrict:(schema:Record<string, string >, option?:Option)=>{
+      for (const key in data) {
+        if (key in schema) {
+          const expectedType = schema[key];
+          const actualValue = data[key as keyof object];
+          if (typeof actualValue !== expectedType) {
+            const errorMessage = option?.message ? option.message : 'type required';
+            if (option?.error) throw new Error(errorMessage);
+            if (option?.isRequire) return option?.message ? option.message : 'type required';
+            return errorMessage;
+          }
+        } else  {
+          const errorMessage = option?.message ? option.message : 'type required';
+          if (option?.error) throw new Error(errorMessage);
+          if (option?.isRequire) return option?.message ? option.message : 'type required';
+          return errorMessage;
+        }
+      }
+      for (const key in schema) if (!(key in data))  {
+        const errorMessage = option?.message ? option.message : 'type required';
+        if (option?.error) throw new Error(errorMessage);
+        if (option?.isRequire) return option?.message ? option.message : 'type required';
+        return errorMessage;
+      }
+      return true;
+    },
   };
 };
