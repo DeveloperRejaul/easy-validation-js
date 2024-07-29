@@ -1,14 +1,6 @@
-import { main as obj } from './core/object/obj';
-import { main as type } from './core/type/type';
-
-const easy = () => {
-  return { ...type, obj };
-};
-
-
-export const Easy = easy();
-
-
+import Easy from 'core/type/type';
+import Obj from 'core/object/obj';
+export  { Easy, Obj };
 
 
 

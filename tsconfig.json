@@ -1,23 +1,26 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "module": "CommonJS",
-    "lib": ["es6"],
     "allowJs": true,
-    "outDir": "lib",
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": "src",
+    "declaration": true,
+    "esModuleInterop": false,
+    "inlineSourceMap": false,
+    "lib": ["esnext"],
+    "listEmittedFiles": false,
+    "listFiles": false,
+    "moduleResolution": "node",
+    "noFallthroughCasesInSwitch": true,
+    "pretty": true,
+    "resolveJsonModule": true,
     "rootDir": "src",
-    "strict": true,
-    "noImplicitAny": true,
-    "esModuleInterop": true,
-    "resolveJsonModule": true
+    "skipLibCheck": true,
+    "traceResolution": false,
+    "types": ["node"],
+    "outDir": "dist"
   },
-  "path": {
-    "*": ["./src/*"]
-  },
-  "esModuleInterop": true,
-  "forceConsistentCasingInFileNames": true,
-  "strict": true,
-  "skipLibCheck": true,
   "include": ["src"],
-  "exclude": ["node_modules", "readme.md"]
+  "exclude": ["node_modules", "readme.md"],
+  "compileOnSave": false,
+  "forceConsistentCasingInFileNames": true
 }

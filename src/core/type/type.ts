@@ -1,7 +1,8 @@
-import { Option } from './../../utils/types';
-import { main as _obj } from '../object/obj';
+import _obj from 'core/object/obj';
+import { Option } from '../../types/types';
+
   
-const main = {
+export default {
   isString: (value:string, option?:Option) => {
     if (typeof value !== 'string') {
       const errorMessage = option?.message ? option.message : 'string required';
@@ -48,7 +49,6 @@ const main = {
     return _obj(obj);
   },
 };
-export { main }; 
 
 
 

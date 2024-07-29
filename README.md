@@ -31,7 +31,8 @@ Install easy-validation-js with npm <br>
 #### String and number
 
 ```javascript
-const { Easy } = require('easy-validation-js');
+const { Easy } = require('easy-validation-js'); // CommonJS
+import { Easy } from 'easy-validation-js'; // ESM
 // for string data
 const str1 = 'hello world';
 const str2 = 20;
@@ -56,7 +57,8 @@ console.log(myNumber);
 ### Object use cases
 
 ```javascript
-const { Easy } = require('easy-validation-js');
+const { Easy } = require('easy-validation-js'); // CommonJS
+import { Easy } from 'easy-validation-js'; // ESM
 
 const myObj = { data: 'hello world', status: '200' };
 // check is object

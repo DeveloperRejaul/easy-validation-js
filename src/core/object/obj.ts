@@ -1,6 +1,6 @@
-import { Option } from './../../utils/types';
+import { Option } from '../../types/types';
 
-export const main = (data:object) => {
+export default (data:object) => {
   return {
     len: (num: number, option?: Option)=> {
       const isOk:boolean = Object.keys(data).length === num;
