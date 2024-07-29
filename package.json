@@ -1,6 +1,6 @@
 {
   "name": "easy-validation-js",
-  "version": "1.3.3",
+  "version": "1.3.4",
   "description": "javascript validation library",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
